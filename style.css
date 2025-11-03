@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/*estilização do cabeçalho*/
+.cabecalho {
+    width: 100%;
+    height: 6.7rem;
+    background-color: #8B0000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-bottom: 2px solid white;
+    box-sizing: border-box;
+}
+
+.cabecalho .imagemlogo img {
+    height: 80px;
+    width: auto;
+    cursor: pointer;
+}
+
+.cabecalho .conteudos {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cabecalho h4 {
+    color: white;
+    margin: 0;
+    padding: 0 1px;
+    font-size: 1.3rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.cabecalho h4:hover {
+    transform: scale(1.1);
+    color: #ffd700;
+}
+/*fim do cabeçalho*/
+
+
+/*tela inicial*/
+.inicial {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.inicial .background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.inicial .imagemtitulo {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(40%, -50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.inicial .imagemtitulo img {
+    width: 40vw;
+    height: auto;
+    object-fit: contain;
+}
+/*fim do inicial*/
+
+
+/*sobre hogwarts legacy*/
+
+.sobrehogwarts {
+    background-color: #2f2f2f;
+    position: relative;
+    padding: 50px 20px;
+}
+
+.sobrehogwarts::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(51,51,51, 0), #004d66);
+}
+
+.titulosobre h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 10rem;
+    font-size: 3em;
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+.sobre .imagem {
+    flex: 1;
+}
+
+.sobre .imagem img {
+    width: 300px;
+    height: auto;
+    border-left: 2px solid white;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.sobre .conteudo {
+    flex: 1;
+    color: white;
+    text-align: left;
+}
+
+.sobre .conteudo h1 {
+    margin-bottom: 15px;
+    font-size: 3em;
+    text-align: center;
+}
+
+.sobre .conteudo p {
+    line-height: 1.6;
+    text-align: center;
+}
+/*fim da seção sobre*/
+
+/*seção dos trailers*/
+.trailers {
+    background: linear-gradient(to bottom, #004d66, #000000);
+    padding: 50px 0;
+    color: white;
+}
+
+.trailers .titulotrailers {
+    text-align: center;
+    margin-bottom: 10rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.trailers .videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.trailers .videos iframe {
+    border-radius: 15px;
+    width: 560px;
+    height: 315px;
+}
+/*fim da seção trailers*/
+
+
+
+/*seção das casas de hogwarts legacy*/
+.casas {
+    background-color: #000000;
+    padding: 50px 20px;
+}
+
+.casas .titulocasas {
+    text-align: center;
+    margin-bottom: 10rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .card {
+  position: relative;
+  width: 600px;
+  height: 320px;
+  padding: 15px;
+  background: linear-gradient(60deg, #fff 0%, #1d2229 100%);
+  overflow: hidden;
+  margin-bottom: 70px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.container .card h2 {
+  z-index: 99;
+  position: absolute;
+  bottom: 25px;
+  right: 200px;
+  font-size: 50px;
+  font-weight: 700;
+  color: red;
+  pointer-events: none;
+  transition: 0.2s ease;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.container .card p {
+  z-index: 99;
+  position: absolute;
+  bottom: 60px;
+  right: 130px;
+  width: 150px;
+  color: white;
+  opacity: 0;
+  font-size: 16px;
+  text-align: right;
+  letter-spacing: 1px;
+  transition: 0.2s ease;
+  text-align: center;
+}
+
+.container .card .visit-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 60px;
+  width: 80px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.container .card span {
+  z-index: 99;
+  position: absolute;
+  top: 60px;
+  right: 35px;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1px;
+  writing-mode: vertical-lr;
+  transition: 0.2s ease;
+  opacity: 0.7;
+}
+
+.container .card .pic {
+  z-index: 100;
+  width: 265px;
+  height: 300px;
+  background-image: url(./icon-grifinoria.webp);
+  background-size: cover;
+  border-radius: 12px;
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+
+.container .card button {
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+.container .card:hover button {
+  transform: scale(16.5);
+  opacity: 0.5;
+}
+
+.conatiner .card:hover h2 {
+  bottom: 80px;
+  right: 50px;
+}
+
+.container .card:hover p {
+  opacity: 1;
+  right: 30px;
+}
+
+.container .card:hover .visit-btn {
+  opacity: 1;
+  transform: translateX(-5px);
+}
+
+.container .card:hover span {
+  opacity: 0;
+  top: 80px;
+}
+
+.container .card:hover .pic {
+  filter: grayscale(0);
+  width: 310px;
+}
+
+.container .card2 .pic {
+  background-image: url(./icon-lufa-lufa.webp);
+  transition: 0.3s ease;
+}
+
+.container .card2 button {
+  background-color: yellow;
+}
+
+.container .card2 h2 {
+  color: yellow;
+}
+
+.container .card2 p {
+  color: black;
+}
+
+.container .card2:hover .visit-btn {
+  background-color: yellow;
+  color: black;
+}
+
+.container .card3 .pic {
+  background-image: url(./icon-sonserina.webp);
+  transition: 0.3s ease;
+}
+
+.container .card3 button {
+  background-color: green;
+}
+
+.container .card3 h2 {
+  color: green;
+}
+
+.container .card3:hover .visit-btn {
+  background-color: green;
+  color: black;
+}
+
+.container .card4 .pic {
+  background-image: url(./icon-corvinal.png);
+  transition: 0.3s ease;
+}
+
+.container .card4 button {
+  background-color: blue;
+}
+
+.container .card4 h2 {
+  color: blue;
+}
+
+.container .card4:hover .visit-btn {
+  background-color: blue;
+  color: black;
+}
+
+/*fim da seção casas hogwarts*/
+
+
+/*seção imagens*/
+.pictures {
+  background-color: #480000;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picturestitulo {
+  text-align: center;
+  margin-bottom: 15rem;
+  margin-top: 5rem;
+}
+
+.picturestitulo h1 {
+  font-size: 3rem;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.imagens {
+  width: 100%;
+}
+
+.imagens img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+}
+/*fim da seção pictures*/
+
+/*seção disponivel*/
+.disponivel {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.disponivel h1 {
+  font-size: 1.8rem;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.disponivel .icon img {
+  width: 80px;
+  height: 50px;
+  object-fit: contain;
+}
+
+
+/* Responsividade seção casas*/
+@media (max-width: 630px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .container .card {
+    width: 90%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  .container .card .pic {
+    width: 160px;
+    height: 180px;
+  }
+
+  .container .card:hover .pic {
+  filter: grayscale(0);
+  width: 180px;
+}
+
+  .container .card h2 {
+    font-size: 32px;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    text-align: center;
+  }
+
+  .container .card p {
+    width: 80%;
+    right: 10%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .container .card .visit-btn {
+    display: none;
+  }
+
+  .container .card span {
+    display: none;
+  }
+}
+/*fim da responsividade das seções casas */
+
+
+/*responsividade dos trailers*/
+@media (max-width: 1187px) {
+    .trailers .videos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 619px) {
+    .trailers .videos iframe {
+        width: 100%;
+        height: 315px; 
+    }
+}
+
+/* Responsividade da tela sobre hogwarts legacy */
+@media (max-width: 692px) {
+    .sobre {
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 20px; 
+        padding: 3rem;
+    }
+
+    .sobre .imagem img {
+        border: none;
+        padding: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .sobre .conteudo {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/*responsividade tela inicial*/
+@media (max-width: 1024px) {
+    .imagemtitulo img {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .imagemtitulo img {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .imagemtitulo {
+        left: 50%;
+    }
+
+    .imagemtitulo img {
+        width: 75vw;
+    }
+}
+
+
+/*responsividade do cabeçalho*/
+@media (max-width: 788px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .cabecalho .conteudos {
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .cabecalho h4 {
+        font-size: 18px;
+    }
+
+    .cabecalho .imagemlogo {
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
